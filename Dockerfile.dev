@@ -1,10 +1,10 @@
 FROM node:16-alpine
 
-USER node
-
 RUN mkdir -p /home/xuandong93/frontend
 
 WORKDIR '/home/xuandong93/frontend'
+
+USER node
 
 COPY --chown=node:node ./package.json ./
 
