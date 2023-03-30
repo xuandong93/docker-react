@@ -4,12 +4,10 @@ RUN mkdir -p /home/xuandong93/frontend
 
 WORKDIR '/home/xuandong93/frontend'
 
-USER node
-
-COPY --chown=node:node ./package.json ./
+COPY ./package.json ./
 
 RUN npm install
 
-COPY --chown=node:node ./ ./
+COPY ./ ./
 
 CMD ["npm", "run", "start"]
