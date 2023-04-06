@@ -1,0 +1,19 @@
+version: '3'
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    ports: 
+      - "3000:3000"
+    volumes:
+      - /home/xuandong93/frontend/node_modules 
+      - .:/home/xuandong93/frontend
+  tests:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /home/xuandong93/frontend/node_modules
+      - .:/home/xuandong93/frontend
+    command: ["npm", "run", "test"]
